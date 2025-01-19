@@ -4,7 +4,7 @@
 void matrix_input(int **a) {
     // Allocate memory for a 3x3 matrix (flattened as a 1D array)
     *a = (int *)malloc(3 * 3 * sizeof(int));
-    if (*a == NULL) {
+    if (*a == NULL){
         printf("Memory allocation failed.\n");
         return;
     }
