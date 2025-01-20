@@ -1,66 +1,48 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
-
-void matrix_input(int **a) {
-    // Allocate memory for a 3x3 matrix (flattened as a 1D array)
-    *a = (int *)malloc(3 * 3 * sizeof(int));
-    if (*a == NULL){
-        printf("Memory allocation failed.\n");
-        return;
+int input(int *p[3]);
+int dislay(int *q[3]);
+int product(int *a[3],int *b[3],int *c[3]);
+int main(){
+    int *A[3],*B[3],*C[3];
+    for (int i=0;i<3;i++){
+        A[i]=(int*)malloc(3*sizeof(int));
+        B[i]=(int*)malloc(3*sizeof(int));   
+        C[i]=(int*)malloc(3*sizeof(int));
     }
-
-    // Input the elements of the matrix
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            printf("Enter the (%d,%d) element of the array: ", i + 1, j + 1);
-            scanf("%d", (*a) + i * 3 + j); // Use pointer arithmetic to access elements
+    printf("enter matrix A \n");
+    input(A);
+    printf("\nenter matrix B \n");
+    input(B);
+    product(A,B,C);
+    printf("\nproduct of matrix A and B \n");
+    display(C);
+}
+int input(int *p[3]){
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            scanf("%d",(*(p+i)+j));
         }
     }
 }
-
-void matrix_product(int*p,int*q,int*r){
-
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            for (int h = 0; h < 3; h++)
-            {
-                r[i][j]= 
-                
+int product(int *a[3],int *b[3],int *c[3]){
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            *((c+i)+j)=0;
+            for(int k=0;k<3;k++){
+                *((c+i)+j)+=(((a+i)+k))*((*(b+j)+k));
             }
-            
         }
-        
     }
-    
-
 }
-void resultant_matrix(int **r){
-
-    for (int  i = 0; i < 3; i++)
+int display(int *q[3])
+{   
+    for(int i=0;i<3;i++)
     {
-        for (int j = 0; j <3; j++)
+        for(int j=0;j<3;j++)
         {
-            printf("%d\t",r[i][j]);
+            printf("%d\t",((q+i)+j));
         }
         printf("\n");
-        
     }
-
-}
-int main(){
-
-
-    int *matrix_1=(int*)malloc(3*3*sizeof(int));
-    int *matrix_2=(int*)malloc(3*3*sizeof(int));
-    int *matrix_3=(int*)malloc(3*3*sizeof(int));
-
-    matrix_input(&matrix_1);
-    matrix_input(&matrix_2);
-    resultant_matrix(&matrix_1);
-    
-    
-
-    return 0;
 }

@@ -10,7 +10,7 @@ int main() {
     int array_1[10];
     int array_2[10];
 
-    // Input for the first array
+    printf("enter the first element of array");// Input for the first array
     for (int i = 0; i < 10; i++) {
         scanf("%d", &array_1[i]);
     }
