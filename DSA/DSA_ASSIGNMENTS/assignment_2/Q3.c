@@ -17,9 +17,11 @@
 // SB 100155 VenkatKrishna 4500.00 Saving
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 struct bankmgmt{    // stucture for storing details of customer
-    int account_number;
+    long int account_number;
     char customer_name[50];
     int available_balance;
     char account_type[10];
@@ -29,21 +31,48 @@ int main(){
     struct bankmgmt *customer1= (struct bankmgmt *)malloc(sizeof(struct bankmgmt));
     printf("Enter customer's account number : ");
     scanf("%d",&customer1->account_number);
+    getchar(); // Consume the leftover newline character
+
     printf("Enter customer's name : ");
-    scanf("%s",&customer1->customer_name);
+    fgets(customer1->customer_name, sizeof(customer1->customer_name), stdin);
+    customer1->customer_name[strcspn(customer1->customer_name, "\n")] = '\0'; // Remove newline
     printf("Enter customer's available balance : ");
     scanf("%d",&customer1->available_balance);
-    printf("Enter customer's account type : ");
-    scanf("%d",&customer1->account_type);
+    printf("Enter customer's account type  1: saving \n 2: current: ");
+    scanf("%s",customer1->account_type);
 
     printf("enter choice :\n");
     printf("1. Withdrawal \n2. Deposit \n3. Display Balance \n4. Exit\n");
     int choice;
     scanf("%d",&choice);
 
-    switch(choice)
+    switch(choice){
 
-    case 1:
-        
+        case 1:
+            printf("enter amount to withdraw : \n");
+            int withdrawal_amount;
+            scanf("%d",&withdrawal_amount);
+            if(withdrawal_amount>customer1->available_balance){
+                printf("insufficient balance \n");
+            }
+            else{
+                customer1->available_balance = customer1->available_balance - withdrawal_amount;
+            }
+            printf("available balance : %d\n",customer1->available_balance);
+            break;
+        case 2: 
+            printf("enter amount to deposit : \n");
+            int deposit_amount;
+            scanf("%d",&deposit_amount);
+            customer1->available_balance = customer1->available_balance + deposit_amount;
+            printf("available balance : %d\n",customer1->available_balance);
+            break; 
+        case 3:
+            printf("available balance : %d\n",customer1->available_balance);
+            break;
+        case 4:
+            break;            
+    }
+    free(customer1);
     return 0;
 }
