@@ -1,0 +1,1 @@
+// Write a program in C to insert a new node at the beginning of a Singly Linked List.
