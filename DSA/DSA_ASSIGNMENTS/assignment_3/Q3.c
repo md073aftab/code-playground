@@ -1,4 +1,4 @@
-// Write a program in C to create and display a Singly link list.
+//Write a program in C to traverse in a singly linked list.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,6 +7,14 @@ struct node{
     int data;
     struct node* next;
 };
+void linkedListTraversal(struct node *ptr)
+{
+    while (ptr != NULL)
+    {
+        printf("Element: %d\n", ptr->data);
+        ptr = ptr->next;
+    }
+}
 
 int main(){
 
@@ -18,8 +26,7 @@ int main(){
     n2->data=20;
     n2->next=NULL;
 
-    printf("%d\n",n1->data);
-    printf("%d\n",n2->data);
+    linkedListTraversal(n1);
     
     free(n1);
     free(n2);
