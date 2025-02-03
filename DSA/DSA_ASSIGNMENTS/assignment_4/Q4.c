@@ -111,10 +111,64 @@ int main(){
     sixth->data=6;
     sixth->next=NULL;
 
-    display(first);
-    printf("\n");
-    insert_after_node(first,3,35);    
-    display(first);    
+    int choice;
+    int data;
+    int node;
+
+    while(choice!=6){
+
+        printf("\n");
+        printf("Enter the choice from below :\n ");
+        printf("1.Insert a node at first position of linkedlist\n ") ; 
+        printf("2.Insert a node at last position of linkedlist\n ") ; 
+        printf("3.Insert a node at middle position of linkedlist\n ") ; 
+        printf("4.Insert a node after the given node in linkedlist\n ") ; 
+        printf("5.display all elements of linkedlist\n ") ; 
+        printf("6.EXIT\n ") ; 
+        scanf("%d",&choice);
+        
+        switch (choice)
+        {
+        case 1 :
+            printf("enter the data you want to insert in linkedlist :\n");
+            scanf("%d",&data);
+            //insert_at_first(first,data);
+            printf("Your updated linkedlist is :\n");
+            display(insert_at_first(first,data));
+            break;
+        case 2 :
+            printf("enter the data you want to insert in linkedlist :\n");
+            scanf("%d",&data);
+            insert_at_last(first,data);
+            printf("Your updated linkedlist is :\n");
+            display(first);
+            break;
+        case 3 :
+            printf("enter the data you want to insert in linkedlist :\n");
+            scanf("%d",&data);
+            insert_at_middle(first,data);
+            printf("Your updated linkedlist is :\n");
+            display(first);
+            break;
+        case 4 :
+            printf("enter the data you want to insert in linkedlist :\n");
+            scanf("%d",&data);
+            printf("enter the node after which  you want to insert the element in linkedlist");
+            scanf("%d",&node);
+
+            insert_after_node(first,node,data);
+            printf("Your updated linkedlist is :\n");
+            display(first);
+            break;
+        case 5 :
+            display(first);
+            break;
+            
+        
+        case 6:
+            break;
+        }
+    }    
     
     return 0;
 }
