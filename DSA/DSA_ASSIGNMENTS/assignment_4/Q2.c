@@ -23,15 +23,15 @@ void duplicate_node_deletion(struct node* ptr) {
         ptr3 = ptr;
         while (ptr2 != NULL) {
             if (ptr->data == ptr2->data) {
-                ptr3->next = ptr2->next;  // Remove the duplicate node
-                free(ptr2);  // Free the duplicate node memory
-                ptr2 = ptr3->next;  // Continue checking next nodes after the deletion
+                ptr3->next = ptr2->next;  
+                free(ptr2);  
+                ptr2 = ptr3->next;  
             } else {
                 ptr3 = ptr2;
                 ptr2 = ptr2->next;
             }
         }
-        ptr = ptr->next;  // Move to the next node in the list
+        ptr = ptr->next; 
     }
 }
 
@@ -51,7 +51,7 @@ int main() {
     third->next = fourth;
     fourth->data = 1;
     fourth->next = fifth;
-    fifth->data = 3;
+    fifth->data = 1;
     fifth->next = sixth;
     sixth->data = 6;
     sixth->next = NULL;

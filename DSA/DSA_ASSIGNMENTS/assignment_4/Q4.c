@@ -132,7 +132,6 @@ int main(){
         case 1 :
             printf("enter the data you want to insert in linkedlist :\n");
             scanf("%d",&data);
-            //insert_at_first(first,data);
             printf("Your updated linkedlist is :\n");
             display(insert_at_first(first,data));
             break;
