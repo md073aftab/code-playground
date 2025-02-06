@@ -4,7 +4,7 @@ x=0
 y=1
 a=0
 
-while(number!=a or number<a):
+while(number!=a or number>a):
     a=x+y
     y=x
     x=a
