@@ -64,7 +64,7 @@ Node* dequeue(Node* front) {
 }
 
 // Function to return the highest-priority element
-void peek(Node* front) {
+void peek(Node* front){
     if (isEmpty(front)) {
         printf("Queue is empty!\n");
     } else {
