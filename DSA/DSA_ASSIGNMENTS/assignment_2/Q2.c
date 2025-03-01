@@ -28,7 +28,7 @@ int main() {
 
     // Copy and process the arrays
     for (int i = 0; i < 10; i++) {
-        if (i % 2 == 1 && i > 0 && i < 9) {
+        if (i % 2 == 1 && i < 9) {
             // Replace odd-positioned elements (1-based) with the product of adjacent elements
             *(array1->q + i) = (*(array1->p + i - 1)) * (*(array1->p + i + 1));
         } else {

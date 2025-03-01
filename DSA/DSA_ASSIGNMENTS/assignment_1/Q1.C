@@ -3,7 +3,7 @@
 int main(){
     int n;
     printf("Enter number of elements:");
-    scanf("%d",&n);5
+    scanf("%d",&n);
     int arr[n];
     printf("\nInput biotonic array\n");
     for(int i=0;i<n;i++){

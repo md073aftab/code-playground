@@ -14,7 +14,6 @@ void linkedListTraversal(struct node* ptr) {
         ptr = ptr->next;
     }
 }
-
 struct node*  linkedListShift(struct node* head, struct node* last, int number, int nodes){
     int counter=0;
     struct node* ptr=head;

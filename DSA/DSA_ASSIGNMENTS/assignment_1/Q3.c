@@ -39,22 +39,13 @@ int main()
 
         printf("enter the name of student %d : \n",i+1);
         scanf("%s",&person[i].name);
-
-
-
     }
-
-
     printf("\nentered students details is shown below : \n");
-
     for(int i=0 ; i<n ; i++)
     {
         printf("\ndetails of student %d : \n",i+1);
-
         printf("roll no = %d\n",person[i].roll_no);
         printf("marks = %f\n",person[i].marks);
         printf("name = %s",person[i].name);
-
     }
-
 }
