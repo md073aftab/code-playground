@@ -39,7 +39,7 @@ int isFull(struct stack *ptr)
  
 void push(struct stack* ptr, char val){
     if(isFull(ptr)){
-        printf("Stack Overflow! Cannot push %d to the stack\n", val);
+        printf("Stack Overflow! Cannot push %c to the stack\n", val);
     }
     else{
         ptr->top++;
