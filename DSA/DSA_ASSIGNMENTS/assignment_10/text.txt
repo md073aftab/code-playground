@@ -2,3 +2,5 @@ Md Aftab Siddiqui,058,AI
 Ojash Sanjay Gupta,057,AI
 Keval Makawana,059,AI
 Karan Kadvani,064,AI
+Tejas Patil,061,AI
+Raghav Bhatiya,054,AI

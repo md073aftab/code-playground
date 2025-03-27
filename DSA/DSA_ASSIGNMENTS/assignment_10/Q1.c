@@ -3,9 +3,9 @@
 #include <string.h>
 
 struct details {
-    char Name[100];  // Student Name
-    int Rollno;      // Roll Number
-    char Dept[10];   // Department
+    char Name[100];  
+    int Rollno;     
+    char Dept[10];   
 };
 
 // Function to swap two student records
@@ -15,7 +15,7 @@ void swap(struct details *a, struct details *b) {
     *b = temp;
 }
 
-// Bubble Sort function (Sorts by Name, then by Roll Number)
+// Bubble Sort function (Sorts by name, then by roll Number)
 void BubbleSort(struct details *arr, int n) {
     int swapped;
     for (int i = 0; i < n - 1; i++) {
@@ -29,7 +29,7 @@ void BubbleSort(struct details *arr, int n) {
                 swapped = 1;
             }
         }
-        if (swapped == 0) break; // Stop if already sorted
+        if (swapped == 0) break;
     }
 }
 
@@ -41,9 +41,9 @@ void BinarySearch(struct details *arr, int n, char *name) {
         int mid = left + (right - left) / 2;
         int cmp = strcmp(arr[mid].Name, name);
 
-        if (cmp == 0) {  // Found matching name
+        if (cmp == 0) {  
             found = 1;
-            printf("\nFound Records:\n");
+            printf("Found Records:\n");
 
             // Print students before mid with the same name
             int i = mid;
@@ -60,7 +60,7 @@ void BinarySearch(struct details *arr, int n, char *name) {
             }
             break;
         }
-        if (cmp < 0)  // Name is greater, search right half
+        if (cmp < 0)  //  If Name is greater, search right half
             left = mid + 1;
         else  // Name is smaller, search left half
             right = mid - 1;
@@ -98,10 +98,10 @@ int main() {
         sscanf(line, "%99[^,],%d,%9s", Students[i].Name, &Students[i].Rollno, Students[i].Dept);
         i++;
     }
+
     fclose(file);
 
     int choice = 0;
-
     while (choice != 3) {
         printf("\n1. Bubble Sort\n2. Binary Search\n3. Quit\nEnter your choice: ");
         scanf("%d", &choice);
@@ -121,7 +121,6 @@ int main() {
             BinarySearch(Students, i, searchName);
         }
     }
-
     printf("\nProgram exited successfully.\n");
     return 0;
 }
