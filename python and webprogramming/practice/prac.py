@@ -1,1 +1,1 @@
-print(help(str))
+print(hello)

@@ -9,11 +9,11 @@ class Employee:
         return f"Total salary is {sum}"
     
     def __sub__(self,other):
-        diff =  self.salary - other.salary
+        diff =  abs(self.salary - other.salary)
         return f"Difference is {diff}"
     
-obj1 = Employee("hitesh",1000)
-obj2 = Employee("Dhiraj",6000)
+obj1 = Employee("aftab",1000)
+obj2 = Employee("keval",6000)
 
 print(obj1 + obj2)
 print(obj1 - obj2)
