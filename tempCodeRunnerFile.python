@@ -1,0 +1,8 @@
+import numpy as np
+a = np.arange(5)
+print(a)
+print(a + 1) # broadcasting
+# same as below
+b = np.ones(5)
+a + b
+print(np.sum(a*b))

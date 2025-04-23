@@ -7,7 +7,7 @@
 
 typedef struct stack {
     char arr[MAX];
-    int top;
+    int top;   
 } stack;
 
 void push(stack *s, char c) {

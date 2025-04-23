@@ -1,0 +1,1 @@
+alert("welcome to aftab's first website")
